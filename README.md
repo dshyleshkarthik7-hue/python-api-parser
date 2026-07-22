@@ -6,14 +6,14 @@ A lightweight Python project demonstrating how to safely parse nested API respon
 
 ## 📌 Problem
 
-Third-party APIs often return nested JSON responses with optional or missing fields. Accessing these values directly can lead to repetitive code like this:
+Third-party APIs often return nested JSON responses with optional or missing fields. This usually leads to repetitive code like:
 
 ```python
 city = response.get("address", {}).get("city", "Unknown")
 zipcode = response.get("address", {}).get("zipcode", "Unknown")
 ```
 
-As your application grows, these repeated dictionary lookups become harder to maintain and more error-prone.
+As applications grow, these repeated dictionary lookups become harder to maintain and update.
 
 ---
 
@@ -28,7 +28,7 @@ print(user.city)
 print(user.zipcode)
 ```
 
-Your application now works with clean, typed Python objects instead of raw dictionaries.
+Now the rest of your application works with clean Python objects instead of raw dictionaries.
 
 ---
 
@@ -36,10 +36,10 @@ Your application now works with clean, typed Python objects instead of raw dicti
 
 - Fetches data from a real public REST API
 - Uses Python `@dataclass` for structured models
-- Centralizes API parsing in one place
-- Safely handles missing nested fields using sensible defaults
-- Includes unit tests for the parser
-- Clean, beginner-friendly project structure
+- Centralizes API parsing logic
+- Safely handles missing nested fields with sensible defaults
+- Includes unit tests
+- Simple, beginner-friendly project structure
 
 ---
 
@@ -49,28 +49,28 @@ Your application now works with clean, typed Python objects instead of raw dicti
 python-api-parser/
 │
 ├── tests/
-│   └── test_parser.py      # Unit tests
+│   └── test_parser.py
 │
-├── api.py                  # Fetches data from the public API
-├── models.py               # Dataclass model
-├── parser.py               # Converts JSON into Python objects
-├── main.py                 # Runs the example
+├── api.py
+├── models.py
+├── parser.py
+├── main.py
 ├── requirements.txt
 └── README.md
 ```
 
 ---
 
-## 🛠️ Installation
+## 🛠 Installation
 
 Clone the repository:
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/dshyleshkarthik7-hue/python-api-parser.git
 cd python-api-parser
 ```
 
-Install the required package:
+Install the dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -78,7 +78,7 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Running the Project
+## ▶️ Run the Project
 
 ```bash
 python main.py
@@ -89,21 +89,21 @@ python main.py
 ```text
 UserProfile(
     id=1,
-    username='Bret',
-    email='Sincere@april.biz',
-    city='Gwenborough',
-    zipcode='92998-3874'
+    username='test',
+    email='test@example.com',
+    city='Bengaluru',
+    zipcode='560001'
 )
 
-Username : Bret
-Email    : Sincere@april.biz
-City     : Gwenborough
-Zip Code : 92998-3874
+Username : test
+Email    : test@example.com
+City     : Bengaluru
+Zip Code : 560001
 ```
 
 ---
 
-## 🧪 Running the Tests
+## 🧪 Run the Tests
 
 ```bash
 python -m unittest discover tests
@@ -113,26 +113,26 @@ python -m unittest discover tests
 
 ## 💡 Why This Pattern?
 
-Instead of accessing nested dictionaries throughout your application, parse the response once and work with structured Python objects.
+Instead of repeatedly accessing nested dictionaries across your application, parse the response once and work with structured Python objects.
 
 ### Benefits
 
-- ✔ Cleaner and more readable code
-- ✔ Centralized parsing logic
-- ✔ Easier maintenance when API responses change
-- ✔ Sensible default values for optional fields
-- ✔ Better separation of concerns
-- ✔ Improved code reusability
+- ✅ Cleaner and more readable code
+- ✅ Centralized parsing logic
+- ✅ Easier maintenance when API responses change
+- ✅ Sensible default values for optional fields
+- ✅ Better separation of concerns
+- ✅ Improved code reusability
 
 ---
 
 ## 🌐 Public API Used
 
-This project uses the free **JSONPlaceholder** REST API.
+This project uses the free **JSONPlaceholder** REST API for demonstration purposes.
 
 **Endpoint:**
 
-```
+```text
 https://jsonplaceholder.typicode.com/users/1
 ```
 
@@ -142,10 +142,10 @@ https://jsonplaceholder.typicode.com/users/1
 
 Contributions, suggestions, and improvements are welcome.
 
-If you have ideas to improve the project, feel free to open an issue or submit a pull request.
+Feel free to fork the repository, open an issue, or submit a pull request.
 
 ---
 
-## ⭐ If you found this project useful
+## ⭐ Support
 
-Consider giving the repository a ⭐ on GitHub if it helped you learn a new Python pattern.
+If you found this project helpful, consider giving it a ⭐ on GitHub.
